@@ -1,5 +1,5 @@
 {
-  "name": "react-store",
+  "name": "@lokibai/react-store",
   "version": "0.1.0",
   "main": "build/index.js",
   "scripts": {

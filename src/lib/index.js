@@ -1,8 +1,6 @@
-import Example from './components/Example';
-import SecondExample from './components/SecondExample';
+import createStore from './create-store';
+import Provider from './provider';
+import useSelector from './use-selector';
+import useDispatch from './use-dispatch';
 
-export default Example;
-
-export {
-  SecondExample,
-};
+export { createStore, Provider, useSelector, useDispatch };

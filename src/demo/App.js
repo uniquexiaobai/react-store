@@ -1,12 +1,25 @@
 import React from 'react';
-import Example from '../lib';
-import { SecondExample } from '../lib';
+import { useSelector, useDispatch } from '../lib';
 
-const App = () => (
-  <div>
-    <Example />
-    <SecondExample />
-  </div>
-);
+const App = () => {
+	const count = useSelector(state => state.count);
+	const dispatch = useDispatch();
+
+	const increase = () => {
+		dispatch({ type: 'increase' });
+	};
+
+	const decrease = () => {
+		dispatch({ type: 'decrease' });
+	};
+
+	return (
+		<div>
+			<span>{count}</span>
+			<button onClick={increase}>+</button>
+			<button onClick={decrease}>-</button>
+		</div>
+	);
+};
 
 export default App;
