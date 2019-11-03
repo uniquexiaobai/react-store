@@ -1,38 +1,79 @@
-This project was bootstrapped with [Create React Library](https://github.com/udilia/create-react-library).
+# @lokibai/react-use-copy-clipboard
 
-All library files are located inside **src/lib** folder.
+> state management for react
 
-Inside **src/demo** folder, you can test your library while developing.
+[![NPM](https://img.shields.io/npm/v/@lokibai/react-store.svg)](https://www.npmjs.com/package/@lokibai/react-store) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Available Scripts
+## Install
 
-In the project directory, you can run:
+```bash
+npm install --save @lokibai/react-store
+```
 
-### `npm start` or `yarn start`
+## Usage
 
-Runs the library in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```jsx
+// index.js
+import React from 'react';
+import { createStore, Provider } from '@lokibai/react-store';
+import App from './app';
 
-### `npm run test` or `yarn run test`
+const reducer = (state, action = {}) => {
+	const { type } = action;
 
-Runs the test watcher in an interactive mode.
+	switch (type) {
+		case 'increase':
+			return { ...state, count: state.count + 1 };
+		case 'decrease':
+			return { ...state, count: state.count - 1 };
+		default:
+			return state;
+	}
+};
 
-### `npm run build` or `yarn build`
+const store = createStore(reducer, { count: 10 });
 
-Builds the library for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+);
+```
 
-### `npm publish`
+```jsx
+// app.js
+import React from 'react';
+import { useSelector, useDispatch } from '@lokibai/react-store';
 
-Publishes the library to NPM.
+const App = () => {
+	const count = useSelector(state => state.count);
+	const dispatch = useDispatch();
 
-## Typescript
+	const increase = () => {
+		dispatch({ type: 'increase' });
+	};
 
-[Adding Typescript support](https://gist.github.com/DimiMikadze/f25e1c5c70fa003953afd40fa9042517)
+	const decrease = () => {
+		dispatch({ type: 'decrease' });
+	};
 
-## Troubleshooting
+	return (
+		<div>
+			<span>{count}</span>
+			<button onClick={increase}>+</button>
+			<button onClick={decrease}>-</button>
+		</div>
+	);
+};
 
-### Usage of other libraries within your library
+export default App;
+```
 
-- Add the library as a peer dependency in package.json (effectively requiring the calling project to provide this dependency)
-- Add the library as a dev dependency in package.json (effectively allowing this library to successfully build without complaining about not having this dependency)
-- Add the library to the externals config in your webpack.config file(s). By default, only react and react-dom are there, meaning that those are the only two libraries that you can use within your new shared library.
+## License
+
+MIT © [](https://github.com/)
+
+---
+
+This project was bootstrapped with [create-react-library](https://github.com/udilia/create-react-library).
