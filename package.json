@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "state management for react",
   "author": "uniquexiaobai@gmail.com",
+  "repository": "https://github.com/uniquexiaobai/react-store",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",

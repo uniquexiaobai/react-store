@@ -1,4 +1,4 @@
-# @lokibai/react-use-copy-clipboard
+# @lokibai/react-store
 
 > state management for react
 
