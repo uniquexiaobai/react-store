@@ -1,6 +1,8 @@
 {
   "name": "@lokibai/react-store",
   "version": "0.1.0",
+  "description": "state management for react",
+  "author": "uniquexiaobai@gmail.com",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
@@ -9,6 +11,9 @@
     "test": "node scripts/test.js"
   },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.6.0",
