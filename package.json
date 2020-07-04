@@ -1,0 +1,43 @@
+{
+  "name": "@lokibai/react-store",
+  "version": "0.2.0",
+  "description": "state management for react",
+  "author": "uniquexiaobai@gmail.com",
+  "repository": "https://github.com/uniquexiaobai/react-store",
+  "main": "dist/index.js",
+  "module": "dist/react-store.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "husky": "^4.2.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "tsdx": "^0.13.2",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.6"
+  }
+}
