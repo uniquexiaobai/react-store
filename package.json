@@ -11,6 +11,10 @@
     "dist"
   ],
   "license": "MIT",
+  "keywords": [
+    "react",
+    "store"
+  ],
   "publishConfig": {
     "access": "public"
   },

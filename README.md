@@ -73,7 +73,3 @@ export default App;
 ## License
 
 MIT © [](https://github.com/)
-
----
-
-This project was bootstrapped with [create-react-library](https://github.com/udilia/create-react-library).
